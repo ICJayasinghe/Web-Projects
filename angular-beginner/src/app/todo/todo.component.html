@@ -1,0 +1,29 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Add Task</label>
+          <div class="c1">
+            <input required="" type="text" class="form-control" id="task" aria-describedby="task" placeholder="Enter Task" ngModel name="task">
+            <button type="submit" class="btn1 btn-primary" [disabled]="taskForm.invalid">Add</button>
+          </div>
+        </div>
+      </form>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Complete</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let t of taskArray; index as i">
+                <td>{{t.taskName}}</td>
+                <td><input id="checkbox" class="checkbox"  (change)="onCheck(i)" type="checkbox"></td>
+                <td><button class="btn2 btn-danger btn-sm" (click)="onDelete(i)" >Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
