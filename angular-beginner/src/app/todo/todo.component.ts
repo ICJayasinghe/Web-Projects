@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  taskArray=[{taskName: 'Eat', isCompleted:false}];
+  taskArray=[{taskName: 'Study', isCompleted:false}];
   constructor() { }
 
   ngOnInit(): void {
